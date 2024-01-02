@@ -1,0 +1,6 @@
+FROM python:3.12-bullseye
+
+RUN pip install pipenv
+ENV PROJECT_DIR=/app
+WORKDIR ${PROJECT_DIR}
+COPY . ${PROJECT_DIR}
