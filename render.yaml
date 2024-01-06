@@ -8,6 +8,8 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: PORT
+        value: 8000
       - key: EXTERNAL_URL
         envVarKey: RENDER_EXTERNAL_URL
       - key: ACCESS_TOKEN_SECRET
