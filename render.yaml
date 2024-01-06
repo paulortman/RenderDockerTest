@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: testapp
+    runtime: docker
+    healthCheckPath: /
+    region: oregon
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: EXTERNAL_URL
+        envVarKey: RENDER_EXTERNAL_URL
+      - key: ACCESS_TOKEN_SECRET
+        generateValue: true
+      - key: LOGIN_TOKEN_SECRET
+        generateValue: true
+      - key: REFRESH_TOKEN_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pgdb
+          property: connectionString
+#
+# Postgresql Database
+#
+databases:
+  - name: pgdb
+    databaseName: db_name
+    user: db_user
+    plan: free
