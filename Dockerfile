@@ -10,8 +10,8 @@ COPY Pipfile Pipfile.lock ${PROJECT_DIR}
 
 RUN pipenv install --system --deploy
 
-COPY . ${PROJECT_DIR}
+COPY ./src ${PROJECT_DIR}
 
 EXPOSE "8000:8000/tcp"
 
-CMD python rendertest/manage.py runserver 0.0.0.0:8000
+CMD python manage.py runserver 0.0.0.0:8000

@@ -7,3 +7,15 @@ buildshell:
 
 build:
 	docker build -f Dockerfile -t app:latest .
+
+up:
+	docker compose up -d
+
+makemigrations:
+	docker-compose exec app python manage.py makemigrations
+
+migrate:
+	docker-compose exec app python manage.py migrate
+
+superuser:
+	docker-compose exec app python manage.py createsuperuser
