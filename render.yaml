@@ -10,8 +10,8 @@ services:
     envVars:
       - key: PORT
         value: 8000
-      - key: EXTERNAL_URL
-        envVarKey: RENDER_EXTERNAL_URL
+#      - key: EXTERNAL_URL
+#        envVarKey: RENDER_EXTERNAL_URL
       - key: ACCESS_TOKEN_SECRET
         generateValue: true
       - key: LOGIN_TOKEN_SECRET
